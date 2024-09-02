@@ -1,0 +1,74 @@
+.profile {
+  display: flex;
+  padding: 34px 0 20px;
+  border-bottom: 1px solid rgba(33, 33, 33, 0.4);
+}
+
+.profile__column {
+  display: flex;
+  flex-direction: column;
+  width: Hug (420px) px;
+  height: Fill (190px) px;
+  gap: 0px;
+  justify: space-between;
+  opacity: 0px;
+}
+.profile__avatar {
+  height: 190px;
+  width: 190px;
+  margin-right: 20px;
+}
+
+.profile__name {
+  margin: 0;
+  max-width: 420;
+  font-family: Poppins;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 32px;
+  text-align: left;
+  width: 420px;
+  height: 32px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.profile__description {
+  margin: 12px 0 0;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  width: 97px;
+  height: 16px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.profile__edit-btn {
+  border: none;
+  width: Hug (107.34px) px;
+  height: Hug (16px) px;
+  gap: 8px;
+  border-radius: 90px 0px 0px 0px;
+  opacity: 0.7px;
+  background-color: #fcf5e5;
+  margin-top: auto;
+  margin-right: auto;
+}
+
+.profile__new-post-btn {
+  color: #fcf5e5;
+  background-color: #212121;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  margin-top: auto;
+  width: 149px;
+  height: 52px;
+  border-radius: 8px;
+  padding: 18px 24px 18px;
+  gap: 8px;
+  margin-left: auto;
+}
