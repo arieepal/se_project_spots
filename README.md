@@ -4,7 +4,12 @@
 
 - Intro
 - Figma
+- HTML
+- CSS design
+- Vendor
+- Blocks
 - Images
+- Responsive Design
 - Media function
 - Desktop function
 - Grid Layout
@@ -24,3 +29,5 @@ In both, media and desktop view you can see the wonderful functionality of the g
 ![alt text](./images/read.me%20images/bessie%20media%202024-09-06%20at%202.21.27 PM.png)
 
 ![alt text](./images/read.me%20images/bessie%20desktop%202024-09-06%20at%202.21.57 PM.png)
+
+## Deployment link:
