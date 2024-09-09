@@ -34,3 +34,7 @@ In both, media and desktop view you can see the wonderful functionality of the g
 ## Deployment link:
 
 [Arielle's Project 3: Spots](https://arieepal.github.io/se_project_spots/)
+
+## Video link:
+
+[Video Recording: Arielle's Project 3](https://drive.google.com/file/d/1F7e5Smx9RSSndm9cAQ9oD7j7Ma4-23re/view?usp=sharing)

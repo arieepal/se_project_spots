@@ -32,6 +32,7 @@
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  color: #212121;
 }
 
 .profile__description {
@@ -45,7 +46,9 @@
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  opacity: 70%;
   max-width: 420px;
+  color: #212121b2;
 }
 
 .profile__edit-btn {
@@ -55,10 +58,15 @@
   gap: 8px;
   line-height: 1;
   border-radius: 90px 0px 0px 0px;
-  background-color: #fcf5e5;
+  background-color: transparent;
   margin-top: auto;
   margin-right: auto;
   cursor: pointer;
+  color: #212121;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  opacity: 70%;
+  display: flex;
+  padding: 0;
 }
 
 .profile__new-post-btn {
@@ -69,13 +77,14 @@
   font-weight: 500;
   line-height: 1;
   margin-top: auto;
-  width: 149px;
+  width: 157px;
   height: 52px;
   border-radius: 8px;
   padding: 18px 24px 18px;
   gap: 8px;
   margin-left: auto;
   cursor: pointer;
+  border: none;
 }
 
 @media screen and (max-width: 627px) {
@@ -106,12 +115,9 @@
     margin: 0;
     width: 100%;
     padding: 18px 32px 18px 32px;
-    gap: 8px;
   }
 
   .profile__column {
-    display: flex;
-    flex-direction: column;
     align-items: center;
     margin: 0 0 20px;
   }
