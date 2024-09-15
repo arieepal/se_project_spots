@@ -20,6 +20,10 @@
   opacity: 40%;
 }
 
+.card__like-button:hover {
+  opacity: 100%;
+}
+
 .card__content {
   display: flex;
   justify-content: space-between;
