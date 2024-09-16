@@ -59,9 +59,6 @@
     padding: 0;
     max-width: 240px;
     z-index: 2;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
   }
 
   .card__like-button {
