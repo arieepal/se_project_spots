@@ -24,11 +24,21 @@
   opacity: 100%;
 }
 
+.card__like-button_liked {
+  background-image: url("../images/like-icon-liked.svg");
+  opacity: 100%;
+}
+
+.card__like-button_liked:hover {
+  background-image: url("../images/like-icon-liked-hover.svg");
+}
+
 .card__content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 12px 0 0;
+  position: relative;
 }
 
 .card__title {
@@ -43,6 +53,33 @@
   overflow: hidden;
   max-width: 353px;
   color: #212121;
+}
+
+.card__delete-button {
+  /* background-image: url("../images/trashDefault.png");
+  opacity: 50%; */
+  background-image: url("../images/white-trashcan.png");
+  color: white;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  top: 10px;
+  left: 371px;
+  gap: 0px;
+  background-color: #0000004d;
+  border: none;
+  opacity: 100%;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card__delete-button:hover {
+  background-image: url("../images/white-trashcan.png");
+  color: white;
+  background-color: #ff6565;
 }
 
 @media screen and (max-width: 627px) {
