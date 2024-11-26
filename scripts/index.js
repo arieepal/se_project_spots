@@ -25,7 +25,7 @@ const initialCards = [
   },
 
   {
-    name: "Horizontal landscape",
+    name: "Golden Gate bridge",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
   },
 ];
@@ -84,6 +84,7 @@ function handleNewPostSubmit(evt) {
   };
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
+  evt.target.reset();
   closeModal(newPostModal);
 }
 
@@ -112,7 +113,7 @@ function getCardElement(data) {
     previewModalCaptionEl.textContent = data.name;
   });
   cardDeleteBtn.addEventListener("click", () => {
-    cardElement.remove("card");
+    cardElement.remove();
   });
 
   return cardElement;
@@ -129,8 +130,6 @@ editModalCloseButton.addEventListener("click", () => {
 });
 
 newPostModalButton.addEventListener("click", () => {
-  // newPostLinkInput.value = profileName.textContent;
-  // newPostCaptionInput.value = profileDescription.textContent;
   openModal(newPostModal);
 });
 
