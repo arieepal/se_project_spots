@@ -13,10 +13,12 @@
 - Media function
 - Desktop function
 - Grid Layout
+- Like Image Feature
+- Add New Images and Captions
 
 **Intro**
 
-In both, media and desktop view you can see the wonderful functionality of the gallery view and it's transformations. In the images I have provided, you can also see how adding more text will not have an overflow but a cohesive look. This project is made so all the elements are displayed on popular screen sizes.
+In both, media and desktop view you can see the wonderful functionality of the gallery view and it's transformations. In the images I have provided, you can also see how adding more text will not have an overflow but a cohesive look in the bio. You may add knew images and captions. This project is made so all the elements are displayed on popular screen sizes.
 
 **Figma**
 
