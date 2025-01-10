@@ -1,22 +1,31 @@
-const showInputError = (formEl, inputEl, errorMsg) => {
+const settings = {
+  formSelector: ".modal__form",
+  inputSelector: ".modal__input",
+  submitButtonSelector: ".modal__save-button",
+  inactiveButtonClass: "modal__save-button_disabled",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "modal__error",
+};
+
+const showInputError = (formEl, inputEl, errorMsg, config) => {
   const errorMsgId = inputEl.id + "-error";
   const errorMsgEl = document.querySelector("#" + errorMsgId);
   errorMsgEl.textContent = errorMsg;
-  inputEl.classList.add("modal__input_type_error");
+  inputEl.classList.add(config.inputErrorClass);
 };
 
-const hideInputError = (formEl, inputEl) => {
+const hideInputError = (formEl, inputEl, config) => {
   const errorMsgId = inputEl.id + "-error";
   const errorMsgEl = document.querySelector("#" + errorMsgId);
   errorMsgEl.textContent = "";
-  inputEl.classList.remove("modal__input_type_error");
+  inputEl.classList.remove(config.inputErrorClass);
 };
 
-const checkInputValidity = (formEl, inputEl) => {
+const checkInputValidity = (formEl, inputEl, config) => {
   if (!inputEl.validity.valid) {
-    showInputError(formEl, inputEl, inputEl.validationMessage);
+    showInputError(formEl, inputEl, inputEl.validationMessage, config);
   } else {
-    hideInputError(formEl, inputEl);
+    hideInputError(formEl, inputEl, config);
   }
 };
 
@@ -25,38 +34,46 @@ const hasInvalidInput = (inputList) => {
     return !input.validity.valid;
   });
 };
-
-const toggleButtonState = (inputList, buttonElement) => {
-  console.log(toggleButtonState);
-  if (hasInvalidInput(inputList)) {
-    buttonElement.classList.add("modal__save-button_disabled");
-    buttonElement.disabled = true;
+// TODO use the settings object in all functions instead of hard-coded strings
+const toggleButtonState = (inputList, buttonElement, config) => {
+  if (hasInvalidInput(inputList, config)) {
+    disableButton(buttonElement, config);
   } else {
-    buttonElement.classList.remove("modal__save-button_disabled");
+    buttonElement.classList.remove(config.inactiveButtonClass);
     buttonElement.disabled = false;
   }
 };
 
-const setEventListeners = (formEl) => {
-  const inputList = Array.from(formEl.querySelectorAll(".modal__input"));
-  const buttonElement = formEl.querySelector(".modal__save-button");
+const disableButton = (buttonElement, config) => {
+  buttonElement.classList.add(config.inactiveButtonClass);
+  buttonElement.disabled = true;
+};
 
-  // TODO handle ititial states
-  toggleButtonState(inputList, buttonElement);
+const resetValidation = (formEl, inputList, config) => {
+  inputList.forEach((inputElement) => {
+    hideInputError(formEl, inputElement, config);
+  });
+};
+// TODO use the settings object in all functions instead of hard-coded strings
+const setEventListeners = (formEl, config) => {
+  const inputList = Array.from(formEl.querySelectorAll(config.inputSelector));
+  const buttonElement = formEl.querySelector(config.submitButtonSelector);
+
+  toggleButtonState(inputList, buttonElement, config);
 
   inputList.forEach((inputElement) => {
     inputElement.addEventListener("input", function () {
-      checkInputValidity(formEl, inputElement);
-      toggleButtonState(inputList, buttonElement);
+      checkInputValidity(formEl, inputElement, config);
+      toggleButtonState(inputList, buttonElement, config);
     });
   });
 };
 
-const enableValidation = () => {
-  const formList = document.querySelectorAll(".modal__form");
+const enableValidation = (config) => {
+  const formList = document.querySelectorAll(config.formSelector);
   formList.forEach((formEl) => {
-    setEventListeners(formEl);
+    setEventListeners(formEl, config);
   });
 };
 
-enableValidation();
+enableValidation(settings);

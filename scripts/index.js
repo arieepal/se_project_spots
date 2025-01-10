@@ -29,6 +29,9 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
   },
 ];
+
+// TODO pass settings objecy to the validation funtions that are called in this file.
+
 // Profile elements
 const editModalButton = document.querySelector(".profile__edit-btn");
 const newPostModalButton = document.querySelector(".profile__new-post-btn");
@@ -43,9 +46,10 @@ const editModalNameInput = editModal.querySelector("#profile-name-input");
 const editModalDescriptionInput = editModal.querySelector(
   "#profile-description-input"
 );
-
+// card form elements
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostForm = newPostModal.querySelector(".modal__form");
+const newPostSubmitButton = newPostModal.querySelector(".modal__save-button");
 const newPostCloseButton = newPostModal.querySelector(".modal__close");
 const newPostLinkInput = newPostModal.querySelector("#new-post-link-input");
 const newPostCaptionInput = newPostModal.querySelector("#new-post-name-input");
@@ -85,6 +89,7 @@ function handleNewPostSubmit(evt) {
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
   evt.target.reset();
+  disableButton(newPostSubmitButton, settings);
   closeModal(newPostModal);
 }
 
@@ -122,6 +127,12 @@ function getCardElement(data) {
 editModalButton.addEventListener("click", () => {
   editModalNameInput.value = profileName.textContent;
   editModalDescriptionInput.value = profileDescription.textContent;
+
+  resetValidation(
+    editForm,
+    [editModalNameInput, editModalDescriptionInput],
+    settings
+  );
   openModal(editModal);
 });
 
@@ -148,3 +159,20 @@ initialCards.forEach((item) => {
   const cardElement = getCardElement(item);
   cardsList.prepend(cardElement);
 });
+// ESC key
+
+document.addEventListener("keydown", handleEscClose);
+
+function handleEscClose(evt) {
+  if (evt.key === "Escape") {
+    const activeModal = document.querySelector(".modal__opened");
+    if (activeModal) closeModal(activeModal);
+  }
+}
+
+// function handleEscClose(evt) {
+//   if (evt.key === "Escape") {
+//     const activeModal = document.querySelector(".modal__opened");
+//     closeModal(openModal);
+//   }
+// }
