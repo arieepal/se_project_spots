@@ -68,11 +68,13 @@ const cardsList = document.querySelector(".cards__list");
 function openModal(modal) {
   modal.classList.add("modal_opened");
   document.addEventListener("keydown", handleEscClose);
+  modal.addEventListener("mousedown", closeModalOverlay);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
   document.removeEventListener("keydown", handleEscClose);
+  modal.removeEventListener("mousedown", closeModalOverlay);
 }
 
 function handleEditFormSubmit(evt) {
@@ -167,5 +169,11 @@ function handleEscClose(evt) {
   if (evt.key === "Escape") {
     const activeModal = document.querySelector(".modal_opened");
     if (activeModal) closeModal(activeModal);
+  }
+}
+
+function closeModalOverlay(evt) {
+  if (evt.target === evt.currentTarget) {
+    closeModal(evt.currentTarget);
   }
 }
