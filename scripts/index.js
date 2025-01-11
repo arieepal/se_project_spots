@@ -67,10 +67,12 @@ const cardsList = document.querySelector(".cards__list");
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", handleEscClose);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", handleEscClose);
 }
 
 function handleEditFormSubmit(evt) {
@@ -160,8 +162,6 @@ initialCards.forEach((item) => {
   cardsList.prepend(cardElement);
 });
 // ESC key
-
-document.addEventListener("keydown", handleEscClose);
 
 function handleEscClose(evt) {
   if (evt.key === "Escape") {
