@@ -165,14 +165,7 @@ initialCards.forEach((item) => {
 
 function handleEscClose(evt) {
   if (evt.key === "Escape") {
-    const activeModal = document.querySelector(".modal__opened");
+    const activeModal = document.querySelector(".modal_opened");
     if (activeModal) closeModal(activeModal);
   }
 }
-
-// function handleEscClose(evt) {
-//   if (evt.key === "Escape") {
-//     const activeModal = document.querySelector(".modal__opened");
-//     closeModal(openModal);
-//   }
-// }
