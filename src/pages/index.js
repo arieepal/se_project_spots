@@ -1,3 +1,27 @@
+import "./index.css";
+
+// Import the image
+import profileSrc from "../images/spots-avatar-and-card-images/avatar.jpg";
+import pencilImage from "../images/pencil.svg";
+import plusIcon from "../images/plus-icon.svg";
+
+// Select the element and set the src
+const avatarImage = document.getElementById("Bessie-Coleman");
+avatarImage.src = profileSrc;
+
+const editModalImg = document.getElementById("pencil");
+editModalImg.src = pencilImage;
+
+const newPostModalImg = document.getElementById("plus-icon");
+newPostModalImg.src = plusIcon;
+
+import {
+  enableValidation,
+  settings,
+  resetValidation,
+  disableButton,
+} from "../scripts/validations.js";
+
 const initialCards = [
   {
     name: "Val Thorens",
@@ -177,3 +201,5 @@ function closeModalOverlay(evt) {
     closeModal(evt.currentTarget);
   }
 }
+
+enableValidation(settings);
