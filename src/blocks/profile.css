@@ -34,6 +34,7 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  cursor: pointer;
 
   visibility: hidden;
 }
@@ -179,25 +180,21 @@
   }
 
   .profile__avatar-btn {
-    /* visibility: visible;
+    visibility: visible;
     width: 23.34px;
     height: 23.34px;
     top: 52px;
-    left: 52px;
+    left: 155px;
     border-radius: 6px;
     padding: 4px;
     background-color: rgba(33, 33, 33, 0.6);
     gap: 8px;
-    position: absolute; */
-
     position: absolute;
-    width: 23.34px;
-    height: 23.34px;
-    bottom: 0;
-    right: 0;
-    border-radius: 6px;
-    padding: 4px;
-    background-color: red; /* Visibility check */
     z-index: 1000;
+    visibility: hidden;
+  }
+
+  .profile__avatar-container:hover .profile__avatar-btn {
+    visibility: visible;
   }
 }

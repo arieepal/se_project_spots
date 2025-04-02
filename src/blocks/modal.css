@@ -162,7 +162,11 @@
   border-radius: 8px;
   background-color: rgba(255, 255, 255, 1);
   width: 630px;
-  position: relative;
+  /* position: relative; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .modal__delete-title {
@@ -307,11 +311,8 @@
   }
 
   .modal__delete-container {
-    width: 300;
-    height: 208;
-    /* top: 214px;
-    left: 10px; */
-    gap: 20px;
+    width: 90%;
+    height: 208px;
     border-radius: 8px;
     padding: 12px;
     position: absolute;
@@ -319,15 +320,24 @@
     left: 50%;
     transform: translate(-50%, -50%);
     align-items: center;
-    display: flex;
-    justify-content: center;
   }
 
   .modal__delete-title {
     width: 276;
     height: 48;
+    padding: 12px 12px 20px 12px;
     justify-content: space-between;
     text-align: center;
     text-overflow: ellipsis;
+    margin: 0;
+  }
+
+  .modal__delete-close {
+    right: 5px;
+    top: -60px;
+  }
+
+  .modal__delete-form {
+    flex-direction: column;
   }
 }
