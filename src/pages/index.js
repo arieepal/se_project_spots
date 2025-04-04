@@ -93,13 +93,14 @@ const cardsList = document.querySelector(".cards__list");
 // Form elements
 const editModal = document.querySelector("#edit-modal");
 const newPostModal = document.querySelector("#new-post-modal");
-const editForm = document.forms["edit-avatar-form"];
+const editForm = document.forms["edit-profile-form"];
 const newPostForm = newPostModal.querySelector(".modal__form");
 const editModalCloseButton = editModal.querySelector(".modal__close");
 const editModalNameInput = editModal.querySelector("#profile-name-input");
 const editModalDescriptionInput = editModal.querySelector(
   "#profile-description-input"
 );
+
 // card form elements
 
 const newPostSubmitButton = newPostModal.querySelector(".modal__save-button");
