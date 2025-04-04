@@ -133,11 +133,12 @@
 @media screen and (max-width: 627px) {
   .profile {
     flex-direction: column;
-    max-width: 288px;
+    /* max-width: 288px; */
+    width: 100%;
+    max-width: 90%;
     align-items: center;
     text-align: center;
     padding-top: 20px;
-    display: block;
   }
 
   .profile__avatar {
@@ -184,7 +185,7 @@
     width: 23.34px;
     height: 23.34px;
     top: 52px;
-    left: 155px;
+    left: 50px;
     border-radius: 6px;
     padding: 4px;
     background-color: rgba(33, 33, 33, 0.6);

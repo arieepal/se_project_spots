@@ -93,7 +93,7 @@ const cardsList = document.querySelector(".cards__list");
 // Form elements
 const editModal = document.querySelector("#edit-modal");
 const newPostModal = document.querySelector("#new-post-modal");
-const editForm = editModal.querySelector(".modal__form");
+const editForm = document.forms["edit-avatar-form"];
 const newPostForm = newPostModal.querySelector(".modal__form");
 const editModalCloseButton = editModal.querySelector(".modal__close");
 const editModalNameInput = editModal.querySelector("#profile-name-input");
@@ -128,7 +128,17 @@ const previewCloseButton = previewModal.querySelector(
   ".modal__close_type_preview"
 );
 
+//universal classes
+const closeButtons = document.querySelectorAll(
+  ".modal__close, .modal__delete-close, .modal__cancel-button"
+);
+
 let selectedCard, selectedCardId;
+
+closeButtons.forEach((button) => {
+  const popup = button.closest(".modal");
+  button.addEventListener("click", () => closeModal(popup));
+});
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
@@ -287,42 +297,18 @@ editModalButton.addEventListener("click", () => {
   openModal(editModal);
 });
 
-editModalCloseButton.addEventListener("click", () => {
-  closeModal(editModal);
-});
-
 editForm.addEventListener("submit", handleEditFormSubmit);
 
 newPostModalButton.addEventListener("click", () => {
   openModal(newPostModal);
 });
 
-newPostCloseButton.addEventListener("click", () => {
-  closeModal(newPostModal);
-});
-
 newPostForm.addEventListener("submit", handleNewPostSubmit);
-
-previewCloseButton.addEventListener("click", () => {
-  closeModal(previewModal);
-});
 
 avatarModalButton.addEventListener("click", () => {
   openModal(avatarModal);
 });
 avatarForm.addEventListener("submit", handleAvatarSubmit);
-
-avatarCloseButton.addEventListener("click", () => {
-  closeModal(avatarModal);
-});
-
-deleteCloseBtn.addEventListener("click", () => {
-  closeModal(deleteModal);
-});
-
-deleteCancelBtn.addEventListener("click", () => {
-  closeModal(deleteModal);
-});
 
 deleteForm.addEventListener("submit", handleDeleteSubmit);
 // ESC key

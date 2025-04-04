@@ -232,23 +232,6 @@
   /* : 2px solid rgba(255, 255, 255, 1); */
 }
 
-/* .modal__delete-close_type_preview {
-  background-image: url(../images/Close-light.svg);
-  top: 0;
-  right: -52.5px;
-  opacity: 100%;
-  width: 40px;
-  position: absolute;
-}
-
-.modal__delete-close:hover {
-  opacity: 100%;
-}
-
-.modal__delete-close_type_preview:hover {
-  opacity: 40%;
-} */
-
 .modal__delete-form {
   display: flex;
   align-items: center;
@@ -311,15 +294,17 @@
   }
 
   .modal__delete-container {
-    width: 90%;
-    height: 208px;
-    border-radius: 8px;
-    padding: 12px;
-    position: absolute;
+    width: 80%;
+    max-width: 430px;
+    padding: 20px;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    height: auto;
   }
 
   .modal__delete-title {
@@ -339,5 +324,13 @@
 
   .modal__delete-form {
     flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .modal__delete-button,
+  .modal__cancel-button {
+    width: 100%;
+    padding: 18px 0;
   }
 }
